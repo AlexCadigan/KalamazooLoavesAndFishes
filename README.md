@@ -11,7 +11,7 @@ A web app to store data from [Kalamazoo Loaves and Fishes](http://kzoolf.org/) [
 - [Alex Cadigan](https://github.com/AlexCadigan)
 - [Jacob Naranjo](https://github.com/jacobnaran)
 - [Sarah Sui](https://github.com/sarahsui)
-- [Bek Akilov] ()
+- [Bek Akilov] (https://github.com/bekzodaka)
 
 ## License
 This software is licensed under the [MIT License](LICENSE)
