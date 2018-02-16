@@ -1,31 +1,63 @@
+<!DOCTYPE html>
+<html>
 <head>
 	<title> New User </title>
 	<link rel = "icon" href = "img/KLFLogo.jpg">
 	<link rel = "stylesheet" href = "index.css">
+	
+    <script>
+var counter = 1;
+var limit = 3;
+function addInput(divName){
+     if (counter == limit)  {
+          alert("You have reached the limit of adding " + counter + " inputs");
+     }
+     else {
+          var newdiv = document.createElement('div');
+          newdiv.innerHTML = "<br>" + "Household member " + (counter + 1) + " <br><fieldset><legend><h4>Household member information:</h4></legend> <br>Name: <input type='text' placeholder='Firstname'>  <input type='text' name='lname' placeholder='Last name'> Date of Birth: <input type='date' > <h4>Gender:</h4><input type='radio' name='gender' value='male'> Male<input type='radio' name='gender' value='female'> Female<input type='radio' name='gender' value='other'> Other<br></fieldset>";
+          document.getElementById(divName).appendChild(newdiv);
+          counter++;
+     }
+}
+
+	</script>
 </head>
 <body>
 	<h2> New User </h2>
 	<br>
 
-  <form>
-    First Name: <br>
-    <input type="text"/> <br>
-    Last Name: <br>
-    <input type="text"/> <br>
-		Date of Birth: <br>
-		<input type="date">
+<form method="POST">
+		<fieldset>
+	<legend><h4> Household Address </h4></legend>
+	<br>
+	<input type="text" name="street" placeholder="Street Address" required> 
+    <input type="text" name="city" placeholder="City">
+	<input type="number" name="zipcode" placeholder="Zip Code"> <br>
+	</fieldset><br>
+    
+    Household member 1 
+     <div id="dynamicInput">
+          <fieldset>
+    <legend><h4>Household member information:</h4></legend> 
+    <br>
+    Name: <input type="text" name="fname" placeholder="First name">    
+    <input type="text" name="lname" placeholder="Last name"> 
+	Date of Birth: <input type="date" >
+		
+	<h4>Gender:</h4>
+	<input type="radio" name="gender" value="male"> Male
+	<input type="radio" name="gender" value="female"> Female
+	<input type="radio" name="gender" value="other"> Other<br>
+	</fieldset>	<br>
+	</div>
+	<input type="button" value="Add household member" onClick="addInput('dynamicInput');"> <br>
+	<div align="center">
+	<input type="submit" value="Submit">
+	<input type="reset" value="Reset" >
+     </div>
 
-		<h4> Address </h4>
+</form>
 
-		Street: <br>
-    <input type="text"/> <br>
-    City: <br>
-    <input type="text"/> <br>
-		Zip: <br>
-		<input type="number"/> <br>
-		Service Location: <br>
-		<input type="text"> <br>
-		<input type="submit">
-		<input type="reset">
-  </form>
+</form>
 </body>
+</html>
