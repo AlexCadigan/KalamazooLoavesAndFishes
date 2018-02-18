@@ -19,17 +19,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 -->
-<head>
-	<title> KLF Mobile Food Initiative </title>
-	<link rel = "icon" href = "img/KLFLogo.jpg">
-	<link rel = "stylesheet" href = "index.css">
-</head>
-<body>
-	<a href="http://kzoolf.org/mobile-food-initiative-2/">MFI Homepage</a>
-	<br>
-
-	<a href="new_user.html">New User Form</a>
-	<br>
-
-	<a href="new_user.html">Returning User Form</a>
-</body>
