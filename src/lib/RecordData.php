@@ -20,4 +20,18 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 -->
 <?php
-$connection = mysqli_connect("localhost", "id4726014_kalamazooloavesandfishes", "COMP-482", "id4726014_kalamazooloavesandfishes");
+require "config.php";
+$householdSize = count($_POST['fname']);
+for ($index = 0; $index < $householdSize; $index ++) {
+	mysqli_query($connection, "INSERT INTO ClientInfo VALUES (CURDATE(), '" . $_POST['fname'][$index] . "', '" . $_POST['lname'][$index] . "', '" . $_POST['DOB'][$index] . "', '" . count($_POST['fname']) . "', '" . $_POST['street'] . "', '" . $_POST['city'] . "', '" . $_POST['zipcode'] . "', 'CurrentStreet', 'CurrentCity', '12345', 'MFI')");
+}
+mysqli_close($connection); ?>
+<!-- Redirects to the "submit a form" page -->
+<html>
+	<script>
+		window.onload = returnHome();
+		function returnHome() {
+			window.location.href = "../index.html";
+		}
+	</script>
+</html>

@@ -34,7 +34,7 @@ function addInput(divName){
      }
      else {
           var newdiv = document.createElement('div');
-          newdiv.innerHTML = "<br>" + "Household member " + (counter + 1) + " <br><fieldset><legend><h4>Household member information:</h4></legend> <br>Name: <input type='text' placeholder='Firstname'>  <input type='text' name='lname' placeholder='Last name'> Date of Birth: <input type='date' > <h4>Gender:</h4><input type='radio' name='gender' value='male'> Male<input type='radio' name='gender' value='female'> Female<input type='radio' name='gender' value='other'> Other<br></fieldset>";
+          newdiv.innerHTML = "<br>" + "Household member " + (counter + 1) + " <br><fieldset><legend><h4>Household member information:</h4></legend> <br>Name: <input type='text' name = 'fname[]' placeholder='Firstname'>  <input type='text' name='lname[]' placeholder='Last name'> Date of Birth: <input type='date' name = 'DOB[]'> </fieldset>";
           document.getElementById(divName).appendChild(newdiv);
           counter++;
      }
@@ -61,14 +61,9 @@ function addInput(divName){
           <fieldset>
     <legend><h4>Household member information:</h4></legend> 
     <br>
-    Name: <input type="text" name="fname" placeholder="First name">    
-    <input type="text" name="lname" placeholder="Last name"> 
-	Date of Birth: <input type="date" >
-		
-	<h4>Gender:</h4>
-	<input type="radio" name="gender" value="male"> Male
-	<input type="radio" name="gender" value="female"> Female
-	<input type="radio" name="gender" value="other"> Other<br>
+    Name: <input type="text" name="fname[]" placeholder="First name">    
+    <input type="text" name="lname[]" placeholder="Last name"> 
+	Date of Birth: <input type="date" name = "DOB[]" >
 	</fieldset>	<br>
 	</div>
 	<input type="button" value="Add household member" onClick="addInput('dynamicInput');"> <br>
