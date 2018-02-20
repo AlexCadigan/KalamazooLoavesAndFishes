@@ -20,4 +20,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 -->
 <?php
-$connection = mysqli_connect("localhost", "id4726014_kalamazooloavesandfishes", "COMP-482", "id4726014_kalamazooloavesandfishes");
+$connection = mysqli_connect("localhost", "id4726014_klfdata", "COMP-482", "id4726014_klfdata"); ?>
