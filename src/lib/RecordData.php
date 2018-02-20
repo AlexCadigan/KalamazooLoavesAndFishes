@@ -19,17 +19,19 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 -->
-<head>
-	<title> KLF Mobile Food Initiative </title>
-	<link rel = "icon" href = "img/KLFLogo.jpg">
-	<link rel = "stylesheet" href = "index.css">
-</head>
-<body>
-	<a href="http://kzoolf.org/mobile-food-initiative-2/">MFI Homepage</a>
-	<br>
-
-	<a href="new_user.html">New User Form</a>
-	<br>
-
-	<a href="new_user.html">Returning User Form</a>
-</body>
+<?php
+require "config.php";
+$householdSize = count($_POST['fname']);
+for ($index = 0; $index < $householdSize; $index ++) {
+	mysqli_query($connection, "INSERT INTO ClientInfo VALUES (CURDATE(), '" . $_POST['fname'][$index] . "', '" . $_POST['lname'][$index] . "', '" . $_POST['DOB'][$index] . "', '" . count($_POST['fname']) . "', '" . $_POST['street'] . "', '" . $_POST['city'] . "', '" . $_POST['zipcode'] . "', 'CurrentStreet', 'CurrentCity', '12345', 'MFI')");
+}
+mysqli_close($connection); ?>
+<!-- Redirects to the "submit a form" page -->
+<html>
+	<script>
+		window.onload = returnHome();
+		function returnHome() {
+			window.location.href = "../index.html";
+		}
+	</script>
+</html>
