@@ -23,7 +23,7 @@ SOFTWARE.
 require "config.php";
 $householdSize = count($_POST['fname']);
 for ($index = 0; $index < $householdSize; $index ++) {
-	mysqli_query($connection, "INSERT INTO ClientInfo VALUES (CURDATE(), '" . $_POST['fname'][$index] . "', '" . $_POST['lname'][$index] . "', '" . $_POST['DOB'][$index] . "', '" . count($_POST['fname']) . "', '" . $_POST['street'] . "', '" . $_POST['city'] . "', '" . $_POST['zipcode'] . "', 'CurrentStreet', 'CurrentCity', '12345', 'MFI')");
+	mysqli_query($connection, "INSERT INTO People (HouseholdID, DateRegistered, FirstName, LastName, DateOfBirth) VALUES (0, 'CURDATE()', 'TestFirst', 'TESTLast', 'CURDATE()')");
 }
 mysqli_close($connection); ?>
 <!-- Redirects to the "submit a form" page -->
