@@ -23,7 +23,8 @@ SOFTWARE.
 require "config.php";
 $householdSize = count($_POST['fname']);
 for ($index = 0; $index < $householdSize; $index ++) {
-	mysqli_query($connection, "INSERT INTO People (HouseholdID, DateRegistered, FirstName, LastName, DateOfBirth) VALUES (0, 'CURDATE()', 'TestFirst', 'TESTLast', 'CURDATE()')");
+	// HouseholdID cannot be added until we have entered something into the households table because we need to query that table to get the householdID
+	mysqli_query($connection, "INSERT INTO People (HouseholdID, DateRegistered, FirstName, LastName, DateOfBirth) VALUES (0, CURDATE(), '" . $_POST['fname'][$index] . "', '" . $_POST['lname'][$index] . "', '" . $_POST['DOB'][$index] . "')");
 }
 mysqli_close($connection); ?>
 <!-- Redirects to the "submit a form" page -->
