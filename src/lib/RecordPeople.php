@@ -20,16 +20,29 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 -->
 <?php
+
+
 require "config.php";
+
+
+
+
 $householdSize = count($_POST['fname']);
+
+mysqli_query($connection, "INSERT INTO Households (Street, City, ZIP, Size) VALUES (' " . $_POST['street'] . " ' , 
+' " . $_POST['city'] . " ' , ' " . $_POST['zipcode'] . " ' , ' ".$householdSize." ')");
+
 for ($index = 0; $index < $householdSize; $index ++) {
 	// HouseholdID cannot be added until we have entered something into the households table because we need to query that table to get the householdID
 	mysqli_query($connection, "INSERT INTO People (HouseholdID, DateRegistered, FirstName, LastName, DateOfBirth) VALUES (0, CURDATE(), '" . $_POST['fname'][$index] . "', '" . $_POST['lname'][$index] . "', '" . $_POST['DOB'][$index] . "')");
 }
 mysqli_close($connection); ?>
+
+  
+
 <!-- Redirects to the "submit a form" page -->
 <html>
-	<script>
+	<!--<script>
 		window.onload = returnHome();
 		function returnHome() {
 			window.location.href = "../index.html";
