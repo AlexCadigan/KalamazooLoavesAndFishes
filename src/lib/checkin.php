@@ -21,31 +21,29 @@ SOFTWARE.
 -->
 <?php
 require "config.php";
+
 $sql_checkin = "SELECT * FROM People WHERE FirstName='" . $_POST['fname'] . "'";
 $result_checkin = mysqli_query($connection, $sql_checkin);
 
 
-// Free result set
-// mysqli_free_result($result_checkin);
-//     echo "No records matching your query were found.";
-
-if ($result_checkin->num_rows > 0) 
-{
+if ($result_checkin->num_rows > 0) {
     // output data of each row
     while($row = $result_checkin->fetch_assoc()) 
     {
         echo "fname: " . $row["FirstName"]. " lname: " . $row["LastName"]. " DOB" . $row["DateOfBirth"] . "<br>";
     }
-} 
+}
+else {
+     echo "No records matching your query were found.";
+}
+
+// Insert data into the Checkin table
+// mysqli_query($connection, "INSERT INTO CheckIn (HouseholdID) VALUES (" . $householdID . ")";
+
 // Close connection
 mysqli_close($connection);
 ?>
 
 <html>
-	<!-- <script>
-		window.onload = returnHome();
-		function returnHome() {
-			window.location.href = "../index.html";
-		}
-	</script> -->
+
 </html>
