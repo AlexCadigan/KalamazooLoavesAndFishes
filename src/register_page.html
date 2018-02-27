@@ -25,53 +25,50 @@ SOFTWARE.
 	<title> KLF </title>
 	<link rel = "icon" href = "img/KLFLogo.jpg">
 
-	<script>
-	var counter = 1;
-	var limit = 3;
-	function addInput(divName){
-		if (counter == limit)  {
-			alert("You have reached the limit of adding " + counter + " inputs");
-		}
-		else {
-			var newdiv = document.createElement('div');
-			newdiv.innerHTML = "<br>" + "Household member " + (counter + 1) + " <br><fieldset><legend><h4>Household member information:</h4></legend> <br>Name: <input type='text' name = 'fname[]' placeholder='Firstname'>  <input type='text' name='lname[]' placeholder='Last name'> Date of Birth: <input type='date' name = 'DOB[]'> </fieldset>";
-			document.getElementById(divName).appendChild(newdiv);
-			counter++;
-		}
-	}
+    <script>
+var counter = 1;
 
+
+function addInput(divName){
+          var newdiv = document.createElement('div');
+		  var g = document.createElement('button');
+          newdiv.innerHTML = "<br>" + "Household member " + (counter + 1) +" <br><fieldset><legend><h4>Household member information:</h4></legend> <br>Name: <input type='text' name = 'fname[]' placeholder='Firstname' required> <input type='text' name='lname[]' placeholder='Last name' required> Date of Birth: <input type='date' name = 'DOB[]'></fieldset>" + "<input type='button' value='Remove household member' onclick='removeElement('')><br><br>";
+		  counter++;
+		  newdiv.setAttribute("id", "id_" + counter);
+          document.getElementById(divName).appendChild(newdiv);
+          
+}
 	</script>
 </head>
 <body>
-	<h2> Household Registration Form </h2>
+	<h2> Kalamazoo Loaves and Fishes </h2>
+	<h2> Registration Form </h2>
 	<br>
 
-	<form method="POST" action = "lib/RecordPeople.php">
+<form method="POST" action = "lib/RecordData.php">
 		<fieldset>
-			<legend><h4> Household Address </h4></legend>
-			<br>
-			<input type="text" name="street" placeholder="Street Address" required>
-			<input type="text" name="city" placeholder="City">
-			<input type="number" name="zipcode" placeholder="Zip Code"> <br>
-		</fieldset><br>
-
-		Household member 1
-		<div id="dynamicInput">
-			<fieldset>
-				<legend><h4>Household member information:</h4></legend>
-				<br>
-				Name: <input type="text" name="fname[]" placeholder="First name">
-				<input type="text" name="lname[]" placeholder="Last name">
-				Date of Birth: <input type="date" name = "DOB[]" >
-			</fieldset>	<br>
-		</div>
-		<input type="button" value="Add household member" onClick="addInput('dynamicInput');"> <br>
-		<div align="center">
-			<input type="submit" value="Submit">
-			<input type="reset" value="Reset" >
-		</div>
-
-	</form>
+	<legend><h4> Household Address </h4></legend>
+	<br>
+	<input type="text" name="street" placeholder="Street Address" required> 
+    <input type="text" name="city" placeholder="City" required>
+	<input type="number" name="zipcode" placeholder="Zip Code" required> <br>
+	</fieldset><br>
+    
+    Household member 1 
+     <div id="dynamicInput">
+          <fieldset>
+    <legend><h4>Household member information:</h4></legend> 
+    <br>
+    Name: <input type="text" name="fname[]" placeholder="First name" required>    
+    <input type="text" name="lname[]" placeholder="Last name" required> 
+	Date of Birth: <input type="date" name = "DOB[]" required >
+	</fieldset>	<br>
+	</div>
+	<input type="button" value="Add household member" onClick="addInput('dynamicInput');"> <br>
+	<div align="center">
+	<input type="submit" value="Submit">
+	<input type="reset" value="Reset" >
+     </div>
 
 </form>
 </body>
