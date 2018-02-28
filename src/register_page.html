@@ -51,11 +51,13 @@ function addInput(divName){
 	<br>
 	<input type="text" name="street" placeholder="Street Address" required> 
     <input type="text" name="city" placeholder="City" required>
-	<input type="number" name="zipcode" placeholder="Zip Code" required> <br>
+	<input type="text" name="zipcode" placeholder="Zip Code" pattern="[0-9]{5}" maxlength="5" required> <br>
+	
 	</fieldset><br>
+   
     
     Household member 1 
-     <div id="dynamicInput">
+  <div id="dynamicInput">
           <fieldset>
     <legend><h4>Household member information:</h4></legend> 
     <br>
