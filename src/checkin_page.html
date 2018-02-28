@@ -29,13 +29,13 @@ SOFTWARE.
 <body>
   <h2 align="center">Check-In</h2>
 
-<form method="POST" action = "lib/RecordData.php">
+<form method="POST" action = "lib/checkin.php">
 		<fieldset>
 	<legend><h4> Please enter your information </h4></legend>
 	<br>
-	Name: <input type="text" name="fname[]" placeholder="First name" required>    
-    <input type="text" name="lname[]" placeholder="Last name" required> 
-	Date of Birth: <input type="date" name = "DOB[]" required>
+	Name: <input type="text" name="fname" placeholder="First name" required>    
+    <input type="text" name="lname" placeholder="Last name" required> 
+	Date of Birth: <input type="date" name = "DOB" required>
 	</fieldset><br>
 	<input type="submit" value="Enter">
 	<input type="reset" value="Reset" >

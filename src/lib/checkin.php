@@ -22,7 +22,7 @@ SOFTWARE.
 <?php
 require "config.php";
 
-$sql_checkin = "SELECT * FROM People WHERE FirstName='" . $_POST['fname'] . "'";
+$sql_checkin = "SELECT * FROM People WHERE (FirstName LIKE '" . $_POST['fname'] . "') AND (LastName LIKE '" . $_POST['lname'] . "') AND (DateofBirth LIKE'" . $_POST['DOB'] . "')";
 $result_checkin = mysqli_query($connection, $sql_checkin);
 
 
@@ -36,9 +36,6 @@ if ($result_checkin->num_rows > 0) {
 else {
      echo "No records matching your query were found.";
 }
-
-// Insert data into the Checkin table
-// mysqli_query($connection, "INSERT INTO CheckIn (HouseholdID) VALUES (" . $householdID . ")";
 
 // Close connection
 mysqli_close($connection);
