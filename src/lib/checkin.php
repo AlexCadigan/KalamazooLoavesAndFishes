@@ -22,24 +22,30 @@ SOFTWARE.
 <?php
 require "config.php";
 
-$sql_checkin = "SELECT * FROM People WHERE (FirstName LIKE '" . $_POST['fname'] . "') AND (LastName LIKE '" . $_POST['lname'] . "') AND (DateofBirth LIKE'" . $_POST['DOB'] . "')";
+$sql_checkin = "SELECT * FROM People WHERE (FirstName='" . $_POST['fname'] . "') AND (LastName='" . $_POST['lname'] . "') AND (DateofBirth='" . $_POST['DOB'] . "') LIMIT 1";
 $result_checkin = mysqli_query($connection, $sql_checkin);
 
 
 if ($result_checkin->num_rows > 0) {
+    // fetch householdID of the person
+    $result = $result_checkin -> fetch_assoc();
+    $householdID = $result['HouseholdID'];
+
+    $members_query = mysqli_query($connection, "SELECT FirstName, LastName, DateOfBirth FROM People WHERE HouseholdID='" . $householdID . "'");
+
     // output data of each row
-    while($row = $result_checkin->fetch_assoc()) 
+    while($row = $members_query->fetch_assoc())
     {
-        echo 
+        echo
         "<form method='POST' action = 'lib/CheckinResult.php'>
 		<fieldset>
 		<br>
-		FirstName: 
-		<input type='text' name='fname' value='" . $_POST['fname'] . "' placeholder='First name' required>    
-    	LastName: 
-    	<input type='text' name='lname' value='" . $_POST['lname'] . "' placeholder='Last name' required> 
-		Date of Birth: 
-		<input type='date' name = 'DOB' value='" . $_POST['DOB'] . "' required>
+		First Name:
+		<input type='text' name='fname' value='" . $row['FirstName'] . "' placeholder='First name' required>
+    	Last Name:
+    	<input type='text' name='lname' value='" . $row['LastName'] . "' placeholder='Last name' required>
+		Date of Birth:
+		<input type='date' name = 'DOB' value='" . $row['DateOfBirth'] . "' required>
 		</fieldset><br>
 		<input type='submit' value='Correct'>
 		<input type='button' value='Not Correct' onClick='returnRegister()'>
