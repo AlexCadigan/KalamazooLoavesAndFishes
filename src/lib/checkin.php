@@ -25,35 +25,32 @@ require "config.php";
 $sql_checkin = "SELECT * FROM People WHERE (FirstName='" . $_POST['fname'] . "') AND (LastName='" . $_POST['lname'] . "') AND (DateofBirth='" . $_POST['DOB'] . "') LIMIT 1";
 $result_checkin = mysqli_query($connection, $sql_checkin);
 
-
+// if the results are non empty
 if ($result_checkin->num_rows > 0) {
-    // fetch householdID of the person
-    $result = $result_checkin -> fetch_assoc();
-    $householdID = $result['HouseholdID'];
 
-    $members_query = mysqli_query($connection, "SELECT FirstName, LastName, DateOfBirth FROM People WHERE HouseholdID='" . $householdID . "'");
+  // fetch householdID
+  $result = $result_checkin -> fetch_assoc();
+  $householdID = $result['HouseholdID'];
 
-    // output data of each row
-    while($row = $members_query->fetch_assoc())
-    {
-        echo
-        "<form method='POST' action = 'lib/CheckinResult.php'>
-		<fieldset>
-		<br>
-		First Name:
-		<input type='text' name='fname' value='" . $row['FirstName'] . "' placeholder='First name' required>
-    	Last Name:
-    	<input type='text' name='lname' value='" . $row['LastName'] . "' placeholder='Last name' required>
-		Date of Birth:
-		<input type='date' name = 'DOB' value='" . $row['DateOfBirth'] . "' required>
-		</fieldset><br>
-		<input type='submit' value='Correct'>
-		<input type='button' value='Not Correct' onClick='returnRegister()'>
-		</form>";
-    }
+  // display household information
+  $household_query = mysqli_query($connection, "SELECT Street, City, ZIP, Size FROM Households WHERE ID='" . $householdID . "' LIMIT 1");
+  while ($hh = $household_query->fetch_assoc()) {
+    echo "Household Address: " . $hh['Street'] . " " . $hh['City'] . " " . $hh['ZIP'] . "<br>";
+    echo "Household Size: " . $hh['Size'] . "<br><br>";
+  }
+
+  $members_query = mysqli_query($connection, "SELECT FirstName, LastName, DateOfBirth FROM People WHERE HouseholdID='" . $householdID . "'");
+
+  // display table of household members
+  echo "<table>";
+  echo "<tr><th>First Name</th><th>Last Name</th><th>Date of Birth</th></tr>";
+  while($row = $members_query->fetch_assoc()) {
+    echo "<tr><td>" . $row['FirstName'] . "</td><td>" . $row['LastName'] . "</td><td>" . $row['DateOfBirth'] . "</tr>";
+  }
+  echo "</table>";
 }
 else {
-     echo "No records matching your query were found.";
+  echo "No records matching your query were found.";
 }
 
 // Close connection
