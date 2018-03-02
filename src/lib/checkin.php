@@ -30,7 +30,20 @@ if ($result_checkin->num_rows > 0) {
     // output data of each row
     while($row = $result_checkin->fetch_assoc()) 
     {
-        echo "fname: " . $row["FirstName"]. " lname: " . $row["LastName"]. " DOB" . $row["DateOfBirth"] . "<br>";
+        echo 
+        "<form method='POST' action = 'lib/CheckinResult.php'>
+		<fieldset>
+		<br>
+		FirstName: 
+		<input type='text' name='fname' value='" . $_POST['fname'] . "' placeholder='First name' required>    
+    	LastName: 
+    	<input type='text' name='lname' value='" . $_POST['lname'] . "' placeholder='Last name' required> 
+		Date of Birth: 
+		<input type='date' name = 'DOB' value='" . $_POST['DOB'] . "' required>
+		</fieldset><br>
+		<input type='submit' value='Correct'>
+		<input type='button' value='Not Correct' onClick='returnRegister()'>
+		</form>";
     }
 }
 else {
@@ -41,6 +54,11 @@ else {
 mysqli_close($connection);
 ?>
 
+<!-- Redirects to the "register" page -->
 <html>
-
+	<script>
+		function returnRegister() {
+			window.location.href = "../register_page.html";
+		}
+	</script>
 </html>
