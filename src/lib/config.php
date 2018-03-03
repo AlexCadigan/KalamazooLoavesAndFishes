@@ -1,4 +1,6 @@
 <!--
+MIT License
+
 Copyright (c) 2018 Alex Cadigan, Jacob Naranjo, Sarah Sui, Bek Akilov, Emilio Jerez
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
