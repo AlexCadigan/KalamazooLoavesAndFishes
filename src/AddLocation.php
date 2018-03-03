@@ -21,12 +21,25 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 -->
-<?php
-require "lib/config.php";
-echo "<html> <select>";
-$query = mysqli_query($connection, "SELECT Name FROM Locations");
-while ($result = $query -> fetch_assoc()) {
-	echo "<option value = '" . $result['Name'] . "'> " . $result['Name'] . " </option>";
-}
-echo "</select> </html>";
-?>
+<html>
+	<!-- Sets the browser tab attributes -->
+	<head>
+		<title> KLF - MFI </title>
+		<link rel = "icon" href = "img/KLFLogo.jpg">
+		<link rel = "stylesheet" href = "AddLocation.css">
+	</head>
+	<body>
+		<div id = 'instructions' class = 'page'>
+			Please enter the new location:
+		</div> <br> <br>
+		<form class = 'page' method = 'POST' action = 'lib/InsertLocation.php'>
+			<fieldset>
+				<input type = 'text' name = 'name' placeholder = 'Location Name' required>
+				<input type = 'text' name = 'street' placeholder = 'Location Street' required>
+				<input type = 'text' name = 'city' placeholder = 'Location City' required>
+				<input type = "text" name = "ZIP" placeholder = "Location Zip" pattern="[0-9]{5}" maxlength="5" required>
+			</fieldset> <br> <br>
+			<input id = 'button' type = 'submit' value = 'Add Location'>
+		</form>
+	</body>
+</html>
