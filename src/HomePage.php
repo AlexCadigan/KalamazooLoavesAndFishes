@@ -52,14 +52,20 @@ $_SESSION['Location'] = $_POST['Locations']; ?>
 		<div class = 'instructions'>
 			Click here if you are a returning customer: <br> <br>
 			<button onclick = 'displayCheckInPage()'> Check-In </button>
+		</div> <br> <br>
+		<div class = 'instructions'>
+			Employees/Volunteers Only: <br> <br>
+			<button onclick = 'displayLocationPage()'> Change Location </button>
 		</div> 
-
 		<script> 
 			function displayRegisterPage() { 
 				window.location.href = "RegisterPage.php";
 			}
 			function displayCheckInPage() {
 				window.location.href = "CheckInPage.php";
+			}
+			function displayLocationPage() {
+				window.location.href = "index.php";
 			}
 		</script>
 	</body>
