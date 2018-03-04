@@ -39,7 +39,10 @@ SOFTWARE.
 				<input type = 'text' name = 'city' placeholder = 'Location City' required>
 				<input type = "text" name = "ZIP" placeholder = "Location Zip" pattern="[0-9]{5}" maxlength="5" required>
 			</fieldset> <br> <br>
-			<input id = 'button' type = 'submit' value = 'Add Location'>
+			<input class = 'button' type = 'submit' value = 'Add Location'> <br> <br>
+		</form>
+		<form class = 'page' action = 'index.php'>
+			<input class = 'button' type = 'submit' value = 'Back'>
 		</form>
 	</body>
 </html>
