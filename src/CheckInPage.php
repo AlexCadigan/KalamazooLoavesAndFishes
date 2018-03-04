@@ -21,27 +21,22 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 -->
-<!DOCTYPE html>
 <html>
-<head>
-  <title> MFI Check-in </title>
-  <link rel = "icon" href = "img/KLFLogo.jpg">
-
-</head>
-<body>
-  <h2 align="center">Check-In</h2>
-
-<form method="POST" action = "lib/checkin.php">
-		<fieldset>
-	<legend><h4> Please enter your information </h4></legend>
-	<br>
-	Name: <input type="text" name="fname" placeholder="First name" required>    
-    <input type="text" name="lname" placeholder="Last name" required> 
-	Date of Birth: <input type="date" name = "DOB" required>
-	</fieldset><br>
-	<input type="submit" value="Enter">
-	<input type="reset" value="Reset" >
-</form>
-
-</body>
+	<head>
+  		<title> KLF - MFI </title>
+		<link rel = "icon" href = "img/KLFLogo.jpg">
+	</head>
+	<body>
+  		<h2 align="center"> Enter Your Information: </h2>
+		<form method="POST" action = "DisplayClientInfo.php">
+			<fieldset>
+				<legend><h4> Please enter your information </h4></legend> <br>
+				Name: <input type="text" name="fname" placeholder="First name" required>    
+    			<input type="text" name="lname" placeholder="Last name" required> 
+				Date of Birth: <input type="date" name = "DOB" required>
+			</fieldset><br>
+			<input type="submit" value="Enter">
+			<input type="reset" value="Reset" >
+		</form>
+	</body>
 </html>

@@ -22,27 +22,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 -->
 <?php
-require "config.php";
-
+require "lib/config.php";
 $sql_checkin = "SELECT * FROM People WHERE (FirstName='" . $_POST['fname'] . "') AND (LastName='" . $_POST['lname'] . "') AND (DateofBirth='" . $_POST['DOB'] . "') LIMIT 1";
 $result_checkin = mysqli_query($connection, $sql_checkin);
-
 // if the results are non empty
 if ($result_checkin->num_rows > 0) {
-
   // fetch householdID
   $result = $result_checkin -> fetch_assoc();
   $householdID = $result['HouseholdID'];
-
   // display household information
   $household_query = mysqli_query($connection, "SELECT Street, City, ZIP, Size FROM Households WHERE ID='" . $householdID . "' LIMIT 1");
   while ($hh = $household_query->fetch_assoc()) {
     echo "Household Address: " . $hh['Street'] . " " . $hh['City'] . " " . $hh['ZIP'] . "<br>";
     echo "Household Size: " . $hh['Size'] . "<br><br>";
   }
-
   $members_query = mysqli_query($connection, "SELECT FirstName, LastName, DateOfBirth FROM People WHERE HouseholdID='" . $householdID . "'");
-
   // display table of household members
   echo "<table>";
   echo "<tr><th>First Name</th><th>Last Name</th><th>Date of Birth</th></tr>";
@@ -54,16 +48,13 @@ if ($result_checkin->num_rows > 0) {
 else {
   echo "No records matching your query were found.";
 }
-
 // Close connection
 mysqli_close($connection);
 ?>
-
-<!-- Redirects to the "register" page -->
 <html>
 	<script>
 		function returnRegister() {
-			window.location.href = "../register_page.html";
+			window.location.href = "../HomePage.php";
 		}
 	</script>
 </html>
