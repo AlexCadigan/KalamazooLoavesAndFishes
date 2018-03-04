@@ -52,7 +52,7 @@ SOFTWARE.
 		<div id = 'instructions' class = 'page'>
 			Please select the location you will be serving food at today:
 		</div> <br> <br> <br>
-		<form class = 'page' method = 'POST' action = 'HomePage.php'>
+		<form class = 'page' method = 'POST' action = 'lib/StoreLocation.php'>
 			<select id = 'locations' name = 'Locations'>
 </html>
 <!-- Quierries the database for the locations -->

@@ -43,7 +43,7 @@ mysqli_close($connection); ?>
 	<script>
 		window.onload = returnHome();
 		function returnHome() {
-			window.location.href = "../index.html";
+			window.location.href = "../HomePage.php";
 		}
 	</script>
 </html>
