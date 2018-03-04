@@ -1,4 +1,5 @@
-<!--
+<?php
+/*
 MIT License
 
 Copyright (c) 2018 Alex Cadigan, Jacob Naranjo, Sarah Sui, Bek Akilov, Emilio Jerez
@@ -20,55 +21,46 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
--->
-<head>
-	<title> KLF Mobile Food Initiative </title>
-	<link rel = "icon" href = "img/KLFLogo.jpg">
-	<link rel = "stylesheet" href = "index.css">
-
-	<style>
-			.button {
-				background-color: #4CAF50; /* Green */
-				border: none;
-				color: white;
-				padding: 16px 32px;
+*/
+session_start();
+$_SESSION['Location'] = $_POST['Locations']; ?>
+<html>
+	<head>
+		<title> KLF - MFI </title>
+		<link rel = "icon" href = "img/KLFLogo.jpg">
+		<style>
+			.page {
 				text-align: center;
-				text-decoration: none;
-				display: inline-block;
-				font-size: 16px;
-				margin: 4px 2px;
-				-webkit-transition-duration: 0.4s; /* Safari */
-				transition-duration: 0.4s;
-				cursor: pointer;
 			}
-			.button1 {
-				background-color: white; 
-				color: black; 
-				border: 2px solid #4CAF50;
+			#title {
+				font-size: 40px;
 			}
-					
-			.button1:hover {
-				background-color: #4CAF50;
-				color: white;
+			.instructions {
+				text-align: center;
+				font-size: 30px;
 			}
-			
-					.button2 {
-				background-color: white; 
-				color: black; 
-				border: 2px solid #008CBA;
-			}
-					.button2:hover {
-				background-color: #008CBA;
-				color: white;
-			}
-			</style>
-</head>
-<body>
+		</style>
+	</head>
+	<body>
+		<div id = 'title' class = 'page'>
+			Welcome to Kalamazoo Loaves and Fishes - Mobile Food Initiative!
+		</div> <br> <br>
+		<div class = 'instructions'>
+			Click here if you are a new customer: <br> <br>
+			<button onclick = 'displayRegisterPage()'> Register </button>
+		</div> <br> <br>
+		<div class = 'instructions'>
+			Click here if you are a returning customer: <br> <br>
+			<button onclick = 'displayCheckInPage()'> Check-In </button>
+		</div> 
 
-	<h2 align="center">Home Page</h2>
-	<div align="center">
-	<button class="button button1"><a href="register_page.html">New User Form</a></button><br>
-	<button class="button button2"><a href="checkin_page.html">Check in</a></button>
-	</div>
-	
-</body>
+		<script> 
+			function displayRegisterPage() { 
+				window.location.href = "RegisterPage.php";
+			}
+			function displayCheckInPage() {
+				window.location.href = "CheckInPage.php";
+			}
+		</script>
+	</body>
+</html>
