@@ -21,12 +21,26 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 -->
+<?php
+require 'lib/SelectedLocation.php';
+echo $_SESSION['Location'];
+?>
 <html>
 	<!-- Sets the browser tab attributes -->
 	<head>
 		<title> KLF - MFI </title>
 		<link rel = "icon" href = "img/KLFLogo.jpg">
-		<link rel = "stylesheet" href = "AddLocation.css">
+		<style>
+			.page {
+				text-align: center;
+			}
+			#instructions {
+				font-size: 30px;
+			}
+			.button {
+				font-size: 200px;
+			}
+		</style>
 	</head>
 	<body>
 		<div id = 'instructions' class = 'page'>

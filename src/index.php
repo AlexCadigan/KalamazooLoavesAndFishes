@@ -26,7 +26,23 @@ SOFTWARE.
 	<head>
 		<title> KLF - MFI </title>
 		<link rel = "icon" href = "img/KLFLogo.jpg">
-		<link rel = "stylesheet" href = "index.css">
+		<style>
+			.page {
+				text-align: center;
+			}
+			#title {
+				font-size: 40px;
+			}
+			#instructions {
+				font-size: 30px;
+			}
+			#locations {
+				font-size: 20px;
+			}
+			.button {
+				font-size: 200px;
+			}
+		</style>
 	</head>
 	<!-- Drop down list of available locations -->
 	<body> 
@@ -36,7 +52,7 @@ SOFTWARE.
 		<div id = 'instructions' class = 'page'>
 			Please select the location you will be serving food at today:
 		</div> <br> <br> <br>
-		<form class = 'page' method = 'POST' action = 'lib/SelectedLocation.php'>
+		<form class = 'page' method = 'POST' action = 'HomePage.php'>
 			<select id = 'locations' name = 'Locations'>
 </html>
 <!-- Quierries the database for the locations -->
