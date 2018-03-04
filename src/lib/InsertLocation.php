@@ -26,3 +26,10 @@ require "config.php";
 mysqli_query($connection, "INSERT INTO Locations (Name, Street, City, ZIP) VALUES (' " . $_POST['name'] . " ' , 
 ' " . $_POST['street'] . " ' , ' " . $_POST['city'] . " ' , ' " . $_POST['ZIP'] . " ')");
 mysqli_close($connection); ?>
+<html>
+	<script>
+		window.onload = function() {
+			window.location.href = "../index.php";
+		}
+	</script>
+</html>
