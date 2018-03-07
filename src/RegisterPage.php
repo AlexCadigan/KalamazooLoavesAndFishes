@@ -25,6 +25,21 @@ SOFTWARE.
 	<head>
 		<title> KLF - MFI </title>
 		<link rel = "icon" href = "img/KLFLogo.jpg">
+		<style>
+			.button {
+			    border: 2px solid black;
+			    font-size: 20px;
+			    height: 50px;
+			    width: 300px;
+			}
+			.button:hover, .button:active {
+			    background-color: black;
+			    color: white;
+			}
+			.button:focus {
+			    outline: 0;
+			}
+		</style>
 	</head>
 	<body>
 		<h2> Register as a New User: </h2> <br>	
@@ -45,10 +60,10 @@ SOFTWARE.
 					Date of Birth: <input type="date" name = "DOB[]" required >
 				</fieldset>	<br>
 			</div>
-			<input type="button" value="Add household member" onClick="addInput('dynamicInput');"> <br>
+			<input class = "button" type="button" value="Add household member" onClick="addInput('dynamicInput');"> <br>
 			<div align="center">
-				<input type="submit" value="Submit">
-				<input type="reset" value="Reset" >
+				<input class = "button" type="submit" value="Submit">
+				<input class = "button" type="reset" value="Reset" >
      		</div>
 		</form>
 		<script>
@@ -56,7 +71,7 @@ SOFTWARE.
 			function addInput(divName){
 	        	var newdiv = document.createElement('div');
 			  	var g = document.createElement('button');
-	          	newdiv.innerHTML = "<br>" + "Household member " + (counter + 1) +" <br><fieldset><legend><h4>Household member information:</h4></legend> <br>Name: <input type='text' name = 'fname[]' placeholder='Firstname' required> <input type='text' name='lname[]' placeholder='Last name' required> Date of Birth: <input type='date' name = 'DOB[]'></fieldset>" + "<input type='button' value='Remove household member' onclick='removeElement('')><br><br>";
+	          	newdiv.innerHTML = "<br>" + "Household member " + (counter + 1) +" <br><fieldset><legend><h4>Household member information:</h4></legend> <br>Name: <input type='text' name = 'fname[]' placeholder='Firstname' required> <input type='text' name='lname[]' placeholder='Last name' required> Date of Birth: <input type='date' name = 'DOB[]'></fieldset>" + "<br> <input class = 'button' type='button' value='Remove household member' onclick='removeElement('')><br><br>";
 			  	counter++;
 			  	newdiv.setAttribute("id", "id_" + counter);
 	          	document.getElementById(divName).appendChild(newdiv);
