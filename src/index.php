@@ -55,7 +55,7 @@ SOFTWARE.
 		</style>
 	</head>
 	<!-- Drop down list of available locations -->
-	<body> 
+	<body>
 		<div id = 'title' class = 'page'>
 			Welcome, KLF Employee/Volunteer!
 		</div> <br>
@@ -77,5 +77,13 @@ while ($location = $query -> fetch_assoc()) {
 			<br> <br> <br> <input class = 'button' type = 'submit' value = 'Enter New Location' formaction = 'AddLocation.php' /> <br> <br> <br>
 			<input class = 'button' type = 'submit' value = 'Choose Selected Location' />
 		</form>
+
+	<!-- display number of households  -->
+	<?
+		require "config.php";
+		$householdCnt = mysqli_num_rows(mysqli_query($connection, "SELECT ID FROM Households"));
+		echo "Households served: " . $householdCnt;
+	?>
+
 	</body>
 </html>
