@@ -40,7 +40,17 @@ SOFTWARE.
 				font-size: 20px;
 			}
 			.button {
-				font-size: 200px;
+			    border: 2px solid black;
+			    font-size: 20px;
+			    height: 50px;
+			    width: 250px;
+			}
+			.button:hover, .button:active {
+			    background-color: black;
+			    color: white;
+			}
+			.button:focus {
+			    outline: 0;
 			}
 		</style>
 	</head>
