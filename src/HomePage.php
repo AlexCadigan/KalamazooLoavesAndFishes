@@ -43,11 +43,11 @@ SOFTWARE.
 			Welcome to Kalamazoo Loaves and Fishes - Mobile Food Initiative!
 		</div> <br> <br>
 		<div class = 'instructions'>
-			Click here if you are a new customer: <br> <br>
+			Click here if you are a new client: <br> <br>
 			<button onclick = 'displayRegisterPage()'> Register </button>
 		</div> <br> <br>
 		<div class = 'instructions'>
-			Click here if you are a returning customer: <br> <br>
+			Click here if you are a returning client: <br> <br>
 			<button onclick = 'displayCheckInPage()'> Check-In </button>
 		</div> <br> <br>
 		<div class = 'instructions'>
