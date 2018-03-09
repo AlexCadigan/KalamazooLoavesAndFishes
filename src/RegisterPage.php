@@ -26,22 +26,38 @@ SOFTWARE.
 		<title> KLF - MFI </title>
 		<link rel = "icon" href = "img/KLFLogo.jpg">
 		<style>
-			.button {
-			    border: 2px solid black;
-			    font-size: 20px;
-			    height: 50px;
-			    width: 300px;
-			}
-			.button:hover, .button:active {
-			    background-color: black;
-			    color: white;
-			}
-			.button:focus {
-			    outline: 0;
-			}
+		ul {
+    		list-style-type: none;
+    		margin: 0;
+    		padding: 0;
+    		overflow: hidden;
+    		background-color: #333;
+		}
+
+		li {
+    		float: left;
+		}
+
+		li a {
+		    display: block;
+		    color: white;
+		    text-align: center;
+		    padding: 14px 16px;
+		    text-decoration: none;
+		}
+		
+		li a:hover {
+		    background-color: #111;
+		}
 		</style>
 	</head>
 	<body>
+		<ul>
+		  <li><a href="CheckInPage.php">Check-In</a></li>
+		  <li><a href="RegisterPage.php">Register</a></li>
+		  <li><a href="AddLocation.php">Change Location</a></li>
+		  <li><a href="#about">About</a></li>
+		</ul>
 		<h2> Register as a New User: </h2> <br>	
 		<form method="POST" action = "lib/InsertPeopleAndHousehold.php">
 			<fieldset>
@@ -60,10 +76,10 @@ SOFTWARE.
 					Date of Birth: <input type="date" name = "DOB[]" required >
 				</fieldset>	<br>
 			</div>
-			<input class = "button" type="button" value="Add household member" onClick="addInput('dynamicInput');"> <br>
+			<input type="button" value="Add household member" onClick="addInput('dynamicInput');"> <br>
 			<div align="center">
-				<input class = "button" type="submit" value="Submit">
-				<input class = "button" type="reset" value="Reset" >
+				<input type="submit" value="Submit">
+				<input type="reset" value="Reset" >
      		</div>
 		</form>
 		<script>
@@ -71,7 +87,7 @@ SOFTWARE.
 			function addInput(divName){
 	        	var newdiv = document.createElement('div');
 			  	var g = document.createElement('button');
-	          	newdiv.innerHTML = "<br>" + "Household member " + (counter + 1) +" <br><fieldset><legend><h4>Household member information:</h4></legend> <br>Name: <input type='text' name = 'fname[]' placeholder='Firstname' required> <input type='text' name='lname[]' placeholder='Last name' required> Date of Birth: <input type='date' name = 'DOB[]'></fieldset>" + "<br> <input class = 'button' type='button' value='Remove household member' onclick='removeElement('')><br><br>";
+	          	newdiv.innerHTML = "<br>" + "Household member " + (counter + 1) +" <br><fieldset><legend><h4>Household member information:</h4></legend> <br>Name: <input type='text' name = 'fname[]' placeholder='Firstname' required> <input type='text' name='lname[]' placeholder='Last name' required> Date of Birth: <input type='date' name = 'DOB[]'></fieldset>" + "<input type='button' value='Remove household member' onclick='removeElement('')><br><br>";
 			  	counter++;
 			  	newdiv.setAttribute("id", "id_" + counter);
 	          	document.getElementById(divName).appendChild(newdiv);

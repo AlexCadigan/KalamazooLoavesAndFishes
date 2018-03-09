@@ -34,11 +34,41 @@ SOFTWARE.
 				font-size: 30px;
 			}
 			.button {
-				font-size: 200px;
+				font-size: 20px;
+			}
+
+			ul {
+    			list-style-type: none;
+	    		margin: 0;
+	    		padding: 0;
+	    		overflow: hidden;
+	    		background-color: #333;
+			}
+
+			li {
+    			float: left;
+			}
+
+			li a {
+		    	display: block;
+		    	color: white;
+		    	text-align: center;
+		    	padding: 14px 16px;
+		    	text-decoration: none;
+			}
+		
+			li a:hover {
+		    	background-color: #111;
 			}
 		</style>
 	</head>
 	<body>
+		<ul>
+		  <li><a href="CheckInPage.php">Check-In</a></li>
+		  <li><a href="RegisterPage.php">Register</a></li>
+		  <li><a href="AddLocation.php">Change Location</a></li>
+		  <li><a href="#about">About</a></li>
+		</ul>
 		<div id = 'instructions' class = 'page'>
 			Please enter the new location:
 		</div> <br> <br>
