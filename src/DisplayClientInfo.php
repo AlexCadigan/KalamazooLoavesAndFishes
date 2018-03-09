@@ -57,7 +57,7 @@ SOFTWARE.
                 padding: 14px 16px;
                 text-decoration: none;
             }
-            
+
             li a:hover {
                 background-color: #111;
             }
@@ -85,7 +85,7 @@ if ($result_checkin->num_rows > 0) {
     // display household information
     $household_query = mysqli_query($connection, "SELECT Street, City, ZIP, Size FROM Households WHERE ID='" . $householdID . "' LIMIT 1");
     while ($hh = $household_query->fetch_assoc()) {
-        echo "<form class = 'page' method = 'POST' action = 'lib/InsertCheckIn.php'> 
+        echo "<form class = 'page' method = 'POST' action = 'lib/InsertCheckIn.php'>
             <fieldset>
                 <legend> Household Address: </legend>
                 <input type = 'text' name = 'street' value = '" . $hh['Street'] . "' readonly>
@@ -103,9 +103,9 @@ if ($result_checkin->num_rows > 0) {
     </fieldset>";
     while($row = $members_query->fetch_assoc()) {
         echo "<fieldset>
-            <input type = 'text' value = '" . $row['FirstName'] . "' readonly>
-            <input type = 'text' value = '" . $row['LastName'] . "' readonly>
-            <input type = 'text' value = '" . $row['DateOfBirth'] . "' readonly>
+            <input type = 'text' name='fname[]' value = '" . $row['FirstName'] . "' readonly>
+            <input type = 'text' name='lname[]' value = '" . $row['LastName'] . "' readonly>
+            <input type = 'text' name='dob[]' value = '" . $row['DateOfBirth'] . "' readonly>
         </fieldset>";
     }
     echo "<br> <br> <input type = 'submit' value = 'Information Correct'>
@@ -115,7 +115,7 @@ if ($result_checkin->num_rows > 0) {
     </div>";
 }
 else {
-    echo "<div class = 'page'> 
+    echo "<div class = 'page'>
         No records matching your query were found <br> <br>
         <button onclick = 'displayRegisterPage()'> Register Your Information </button>
     </div>";
