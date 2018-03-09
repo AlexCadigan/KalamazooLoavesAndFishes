@@ -64,7 +64,7 @@ SOFTWARE.
 		</div> <br> <br> <br>
 		<form class = 'page' method = 'POST' action = 'lib/StoreLocation.php'>
 			<select id = 'locations' name = 'Locations'>
-</html>
+
 <!-- Quierries the database for the locations -->
 <?php
 require "lib/config.php";
@@ -72,18 +72,16 @@ $query = mysqli_query($connection, "SELECT Name FROM Locations");
 while ($location = $query -> fetch_assoc()) {
 	echo "<option> " . $location['Name'] . " </option>";
 } ?>
-<html>
+
 			</select>
 			<br> <br> <br> <input class = 'button' type = 'submit' value = 'Enter New Location' formaction = 'AddLocation.php' /> <br> <br> <br>
 			<input class = 'button' type = 'submit' value = 'Choose Selected Location' />
 		</form>
 
-	<!-- display number of households  -->
-	<?
-		require "config.php";
-		$householdCnt = mysqli_num_rows(mysqli_query($connection, "SELECT ID FROM Households"));
-		echo "Households served: " . $householdCnt;
-	?>
+		<?php
+			$householdCnt = mysqli_num_rows(mysqli_query($connection, "SELECT ID FROM Households"));
+			echo "Households served: " . $householdCnt;
+		?>
 
 	</body>
 </html>
