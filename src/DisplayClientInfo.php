@@ -37,9 +37,39 @@ SOFTWARE.
                 margin-left: auto;
                 margin-right: auto;
             }
+
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            li {
+                float: left;
+            }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            li a:hover {
+                background-color: #111;
+            }
         </style>
     </head>
     <body>
+        <ul>
+          <li><a href="CheckInPage.php">Check-In</a></li>
+          <li><a href="RegisterPage.php">Register</a></li>
+          <li><a href="AddLocation.php">Change Location</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
         <div class = "instructions">
             Is the following information about yourself and your household correct?
         </div> <br>
@@ -73,9 +103,9 @@ if ($result_checkin->num_rows > 0) {
     </fieldset>";
     while($row = $members_query->fetch_assoc()) {
         echo "<fieldset>
-            <input type = 'text' name = 'fname[]' value = '" . $row['FirstName'] . "' readonly>
-            <input type = 'text' name = 'lname[]' value = '" . $row['LastName'] . "' readonly>
-            <input type = 'text' name = 'dob[]' value = '" . $row['DateOfBirth'] . "' readonly>
+            <input type = 'text' name='fname[]' value = '" . $row['FirstName'] . "' readonly>
+            <input type = 'text' name='lname[]' value = '" . $row['LastName'] . "' readonly>
+            <input type = 'text' name='dob[]' value = '" . $row['DateOfBirth'] . "' readonly>
         </fieldset>";
     }
     echo "<br> <br> <input type = 'submit' value = 'Information Correct'>

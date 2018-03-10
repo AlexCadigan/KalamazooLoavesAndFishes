@@ -69,7 +69,4 @@ for ($index = 0; $index < $householdSize; $index ++) {
 	}
 </script>
 
-<body>
-</body>
-
 </html>

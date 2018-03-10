@@ -25,38 +25,51 @@ SOFTWARE.
 	<head>
   		<title> KLF - MFI </title>
 		<link rel = "icon" href = "img/KLFLogo.jpg">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- 
-  <script src="js/bootstrap.min.js"></script>
+
+		<style>
+		ul {
+    		list-style-type: none;
+    		margin: 0;
+    		padding: 0;
+    		overflow: hidden;
+    		background-color: #333;
+		}
+
+		li {
+    		float: left;
+		}
+
+		li a {
+		    display: block;
+		    color: white;
+		    text-align: center;
+		    padding: 14px 16px;
+		    text-decoration: none;
+		}
+		
+		li a:hover {
+		    background-color: #111;
+		}
+		</style>
 	</head>
 	<body>
-  		
-        
-        <div class="container">
+		<ul>
+		  <li><a href="CheckInPage.php">Check-In</a></li>
+		  <li><a href="RegisterPage.php">Register</a></li>
+		  <li><a href="AddLocation.php">Change Location</a></li>
+		  <li><a href="#about">About</a></li>
+		</ul>
 
-    <form method="POST" action = "DisplayClientInfo.php" role="form" style="width:400px; margin: 0 auto;">
-        <h1>Check-in form</h1>
-        
-        <div class="required-field-block">
-            <input type="text" name="fname" placeholder="First Name" class="form-control" required>
-           
-        </div>
-        
-        <div class="required-field-block">
-            <input type="text" name="lname" placeholder="Last Name" class="form-control" required>
-           
-        </div
- 
-        <div class="required-field-block">
-            <input type="date" class="form-control" name="DOB" required>
-            
-        </div>
-        <div>
-        
-       <input type="submit" class="btn btn-primary" value="Enter">
-       </div>
-    </form>
-</div>
+  		<h2 align="center"> Enter Your Information: </h2>
+		<form method="POST" action = "DisplayClientInfo.php">
+			<fieldset>
+				<legend><h4> Please enter your information </h4></legend> <br>
+				Name: <input type="text" name="fname" placeholder="First name" required>    
+    			<input type="text" name="lname" placeholder="Last name" required> 
+				Date of Birth: <input type="date" name = "DOB" required>
+			</fieldset><br>
+			<input type="submit" value="Enter">
+			<input type="reset" value="Reset" >
+		</form>
 	</body>
 </html>

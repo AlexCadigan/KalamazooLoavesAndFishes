@@ -25,7 +25,7 @@ SOFTWARE.
 	<head>
 		<title> KLF - MFI </title>
 		<link rel = "icon" href = "img/KLFLogo.jpg">
-		<style>
+		<!-- <style>
 			.page {
 				text-align: center;
 			}
@@ -36,47 +36,40 @@ SOFTWARE.
 				text-align: center;
 				font-size: 30px;
 			}
-			button {
-			    border: 2px solid black;
-			    font-size: 20px;
-			    height: 50px;
-			    width: 250px;
-			}
-			button:hover, button:active {
-			    background-color: black;
-			    color: white;
-			}
-			button:focus {
-			    outline: 0;
-			}
+		</style> -->
+		<style>
+		ul {
+    		list-style-type: none;
+    		margin: 0;
+    		padding: 0;
+    		overflow: hidden;
+    		background-color: #333;
+		}
+
+		li {
+    		float: left;
+		}
+
+		li a {
+		    display: block;
+		    color: white;
+		    text-align: center;
+		    padding: 14px 16px;
+		    text-decoration: none;
+		}
+		
+		li a:hover {
+		    background-color: #111;
+		}
 		</style>
 	</head>
 	<body>
-		<div id = 'title' class = 'page'>
-			Welcome to Kalamazoo Loaves and Fishes - Mobile Food Initiative!
-		</div> <br> <br>
-		<div class = 'instructions'>
-			Click here if you are a new client: <br> <br>
-			<button onclick = 'displayRegisterPage()'> Register </button>
-		</div> <br> <br>
-		<div class = 'instructions'>
-			Click here if you are a returning client: <br> <br>
-			<button onclick = 'displayCheckInPage()'> Check-In </button>
-		</div> <br> <br>
-		<div class = 'instructions'>
-			Employees/Volunteers Only: <br> <br>
-			<button onclick = 'displayLocationPage()'> Change Location </button>
-		</div> 
-		<script> 
-			function displayRegisterPage() { 
-				window.location.href = "RegisterPage.php";
-			}
-			function displayCheckInPage() {
-				window.location.href = "CheckInPage.php";
-			}
-			function displayLocationPage() {
-				window.location.href = "index.php";
-			}
-		</script>
+		<ul>
+		  <li><a href="CheckInPage.php">Check-In</a></li>
+		  <li><a href="RegisterPage.php">Register</a></li>
+		  <li><a href="AddLocation.php">Change Location</a></li>
+		  <li><a href="#about">About</a></li>
+		</ul>
+
 	</body>
 </html>
