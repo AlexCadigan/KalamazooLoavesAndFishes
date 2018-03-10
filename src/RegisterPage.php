@@ -77,13 +77,10 @@ SOFTWARE.
 					Date of Birth: <input type="date" name = "DOB[]" required >
 				</fieldset>	<br>
 			</div>
-<<<<<<< HEAD
 			</span>
 			<br><br>
 			<input type="button" value="Add household member" onClick="addInput('myForm');"> <br>
-=======
 			<input type="button" value="Add household member" onClick="addInput('dynamicInput');"> <br>
->>>>>>> 25415db3c1bd26932498748988c4fc5eb6f72c05
 			<div align="center">
 				<input type="submit" value="Submit">
 				<input type="reset" value="Reset" >
@@ -92,15 +89,13 @@ SOFTWARE.
 		<script>
 			var counter = 1;
 			function addInput(divName){
-<<<<<<< HEAD
+
 	        	var newdiv = document.createElement('span');
 	          	newdiv.innerHTML = "<br><br>" + "Household member " +" <br><fieldset><legend><h4>Household member information:</h4></legend> <br>Name: <input type='text' name = 'fname[]' placeholder='Firstname' required> <input type='text' name='lname[]' placeholder='Last name' required> Date of Birth: <input type='date' name = 'DOB[]'></fieldset><br>" ;
 	          	var g = document.createElement('button');
-=======
 	        	var newdiv = document.createElement('div');
 			  	var g = document.createElement('button');
-	          	newdiv.innerHTML = "<br>" + "Household member " + (counter + 1) +" <br><fieldset><legend><h4>Household member information:</h4></legend> <br>Name: <input type='text' name = 'fname[]' placeholder='Firstname' required> <input type='text' name='lname[]' placeholder='Last name' required> Date of Birth: <input type='date' name = 'DOB[]'></fieldset>" + "<input type='button' value='Remove household member' onclick='removeElement('')><br><br>";
->>>>>>> 25415db3c1bd26932498748988c4fc5eb6f72c05
+	          	newdiv.innerHTML = "<br>" + "Household member " +" <br><fieldset><legend><h4>Household member information:</h4></legend> <br>Name: <input type='text' name = 'fname[]' placeholder='Firstname' required> <input type='text' name='lname[]' placeholder='Last name' required> Date of Birth: <input type='date' name = 'DOB[]'></fieldset>" + "<input type='button' value='Remove household member' onclick='removeElement('')><br><br>";
 			  	counter++;
 			  	newdiv.setAttribute("id", "id_" + counter);
 			  	g.innerHTML= 'Remove Household Member';
