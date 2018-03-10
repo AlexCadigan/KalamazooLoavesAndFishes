@@ -44,6 +44,7 @@ SOFTWARE.
 	<body>
 		<h2> Register as a New User: </h2> <br>	
 		<form method="POST" action = "lib/InsertPeopleAndHousehold.php">
+			<span id="myForm">
 			<fieldset>
 				<legend><h4> Household Address </h4></legend> <br>
 				<input type="text" name="street" placeholder="Street Address" required> 
@@ -51,7 +52,7 @@ SOFTWARE.
 				<input type="text" name="zipcode" placeholder="Zip Code" pattern="[0-9]{5}" maxlength="5" required> <br>
 	
 			</fieldset><br>
-    		Household member 1 
+    		Household member  
   			<div id="dynamicInput">
           		<fieldset>
     				<legend><h4>Household member information:</h4></legend> <br>
@@ -60,22 +61,45 @@ SOFTWARE.
 					Date of Birth: <input type="date" name = "DOB[]" required >
 				</fieldset>	<br>
 			</div>
-			<input class = "button" type="button" value="Add household member" onClick="addInput('dynamicInput');"> <br>
+			</span>
+			<br><br>
+			<input type="button" value="Add household member" onClick="addInput('myForm');"> <br>
 			<div align="center">
-				<input class = "button" type="submit" value="Submit">
-				<input class = "button" type="reset" value="Reset" >
+				<input type="submit" value="Submit">
+				<input type="reset" value="Reset" >
      		</div>
 		</form>
 		<script>
 			var counter = 1;
 			function addInput(divName){
-	        	var newdiv = document.createElement('div');
-			  	var g = document.createElement('button');
-	          	newdiv.innerHTML = "<br>" + "Household member " + (counter + 1) +" <br><fieldset><legend><h4>Household member information:</h4></legend> <br>Name: <input type='text' name = 'fname[]' placeholder='Firstname' required> <input type='text' name='lname[]' placeholder='Last name' required> Date of Birth: <input type='date' name = 'DOB[]'></fieldset>" + "<br> <input class = 'button' type='button' value='Remove household member' onclick='removeElement('')><br><br>";
+	        	var newdiv = document.createElement('span');
+	          	newdiv.innerHTML = "<br><br>" + "Household member " +" <br><fieldset><legend><h4>Household member information:</h4></legend> <br>Name: <input type='text' name = 'fname[]' placeholder='Firstname' required> <input type='text' name='lname[]' placeholder='Last name' required> Date of Birth: <input type='date' name = 'DOB[]'></fieldset><br>" ;
+	          	var g = document.createElement('button');
 			  	counter++;
 			  	newdiv.setAttribute("id", "id_" + counter);
+			  	g.innerHTML= 'Remove Household Member';
+			  	g.setAttribute("onclick", "removeElement('myForm','id_" + counter + "')");
+			  	newdiv.appendChild(g);
 	          	document.getElementById(divName).appendChild(newdiv);
+	          	//var g = document.createElement('button');
+	          	// g.setAttribute(value,'Remove Household Member');
+	          	// document.getElementById(divName).appendChild(g);
 			}
+			function removeElement(parentDiv, childDiv){
+if (childDiv == parentDiv){
+alert("The parent div cannot be removed.");
+}
+else if (document.getElementById(childDiv)){
+var child = document.getElementById(childDiv);
+var parent = document.getElementById(parentDiv);
+parent.removeChild(child);
+counter --;
+}
+else{
+alert("Child div has already been removed or does not exist.");
+return false;
+}
+}
 		</script>
 	</body>
 </html>
