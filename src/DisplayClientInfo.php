@@ -22,35 +22,77 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 -->
 <html>
-    <head>
-        <title> KLF - MFI </title>
-       <link rel = "icon" href = "img/KLFLogo.jpg">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-	</head>
-	<body>
-	
-	<nav class="navbar navbar-inverse">
+<head>
+<title>KLF</title>
+<link rel = "icon" href = "img/KLFLogo.jpg">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+.navbar-default {
+	background-color: #0a76ac;
+	border-color: #6b8adc;
+}
+.navbar-default .navbar-brand {
+	color: #ffffff;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+	color: #fcfcfc;
+}
+.navbar-default .navbar-text {
+	color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a {
+	color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+	color: #fcfcfc;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+	color: #fcfcfc;
+	background-color: #6b8adc;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+	color: #fcfcfc;
+	background-color: #6b8adc;
+}
+.navbar-default .navbar-toggle {
+	border-color: #6b8adc;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+	background-color: #6b8adc;
+}
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #ffffff;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	border-color: #ffffff;
+}
+.navbar-default .navbar-link {
+	color: #ffffff;
+}
+.navbar-default .navbar-link:hover {
+	color: #fcfcfc;
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-default">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">KLF Mobile Food Initiative</a>
-    </div>
+    <div class="navbar-header"> <a class="navbar-brand" href="#">KLF Mobile Food Initiative</a> </div>
     <ul class="nav navbar-nav">
-      <li><a href="#">Home</a></li>
-       <li><a href="CheckInPage.php">Check-In</a></li>
-		  <li><a href="RegisterPage.php">Register</a></li>
-		  <li><a href="index.php">Change Location</a></li>
-		  <li><a href="#about">About</a></li>
+      <li><a href="HomePage.php">Home</a></li>
+      <li><a href="CheckInPage.php">Check-In</a></li>
+      <li><a href="RegisterPage.php">Register</a></li>
+      <li><a href="index.php">Change Location</a></li>
+      <li><a href="#about">About</a></li>
     </ul>
   </div>
 </nav>
-        <div class = "instructions">
-            Is the following information about yourself and your household correct?
-        </div> <br>
+<div class = "instructions"> Is the following information about yourself and your household correct? </div>
+<br>
 <?php
 require "lib/config.php";
 $sql_checkin = "SELECT * FROM People WHERE (FirstName='" . $_POST['fname'] . "') AND (LastName='" . $_POST['lname'] . "') AND (DateofBirth='" . $_POST['DOB'] . "') LIMIT 1";
@@ -101,10 +143,10 @@ else {
 // Close connection
 mysqli_close($connection); ?>
 <html>
-        <script>
+<script>
             function displayRegisterPage() {
                 window.location.href = 'RegisterPage.php';
             }
         </script>
-    </body>
+</body>
 </html>

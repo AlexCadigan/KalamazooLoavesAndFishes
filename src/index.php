@@ -22,59 +22,99 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 -->
 <html>
-	<!-- Sets the browser tab attributes -->
-	<head>
-		<title> KLF - MFI </title>
-	<link rel = "icon" href = "img/KLFLogo.jpg">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-	</head>
-	<body>
-	
-	<nav class="navbar navbar-inverse">
+<!-- Sets the browser tab attributes -->
+<head>
+<title>Choose Location</title>
+<link rel = "icon" href = "img/KLFLogo.jpg">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+.navbar-default {
+	background-color: #0a76ac;
+	border-color: #6b8adc;
+}
+.navbar-default .navbar-brand {
+	color: #ffffff;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+	color: #fcfcfc;
+}
+.navbar-default .navbar-text {
+	color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a {
+	color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+	color: #fcfcfc;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+	color: #fcfcfc;
+	background-color: #6b8adc;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+	color: #fcfcfc;
+	background-color: #6b8adc;
+}
+.navbar-default .navbar-toggle {
+	border-color: #6b8adc;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+	background-color: #6b8adc;
+}
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #ffffff;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	border-color: #ffffff;
+}
+.navbar-default .navbar-link {
+	color: #ffffff;
+}
+.navbar-default .navbar-link:hover {
+	color: #fcfcfc;
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-default">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">KLF Mobile Food Initiative</a>
-    </div>
+    <div class="navbar-header"> <a class="navbar-brand" href="#">KLF Mobile Food Initiative</a> </div>
     <ul class="nav navbar-nav">
-      <li><a href="#">Home</a></li>
-       <li><a href="CheckInPage.php">Check-In</a></li>
-		  <li><a href="RegisterPage.php">Register</a></li>
-		  <li class="active"><a href="index.php">Change Location</a></li>
-		  <li><a href="#about">About</a></li>
+      <li><a href="HomePage.php">Home</a></li>
+      <li><a href="CheckInPage.php">Check-In</a></li>
+      <li><a href="RegisterPage.php">Register</a></li>
+      <li class="active"><a href="index.php">Change Location</a></li>
+      <li><a href="#about">About</a></li>
     </ul>
   </div>
 </nav>
-		<div id = 'title' class = 'page'>
-			Welcome, KLF Employee/Volunteer!
-		</div> <br>
-		<div id = 'instructions' class = 'page'>
-			Please select the location you will be serving food at today:
-		</div> <br> <br> <br>
-		<form class = 'page' method = 'POST' action = 'lib/StoreLocation.php'>
-			<select id = 'locations' name = 'Locations'>
-
-<!-- Quierries the database for the locations -->
-<?php
+<div align="center" id = 'instructions' class="container">
+<form method = 'POST' action = 'lib/StoreLocation.php'>
+  <h2> Please select the location you will be serving food at today: </h2>
+  <div class="form-group">
+  <label for="sel1">Locations (select one):</label>
+  <select class="form-control" id = 'locations' name = 'Locations'>
+    
+    <!-- Quierries the database for the locations -->
+    <?php
 require "lib/config.php";
 $query = mysqli_query($connection, "SELECT Name FROM Locations");
 while ($location = $query -> fetch_assoc()) {
 	echo "<option> " . $location['Name'] . " </option>";
 } ?>
-
-			</select>
-			<br> <br> <br> <input class = 'button' type = 'submit' value = 'Enter New Location' formaction = 'AddLocation.php' /> <br> <br> <br>
-			<input class = 'button' type = 'submit' value = 'Choose Selected Location' />
-		</form>
-
-		<?php
+  </select>
+  <input class="btn btn-primary" type = 'submit' value = 'Choose Selected Location' />
+  <input class="btn btn-primary" type = 'submit' value = 'Enter New Location' formaction = 'AddLocation.php' />
+</form>
+<div align="center" class="container">
+  <?php
 			$householdCnt = mysqli_num_rows(mysqli_query($connection, "SELECT ID FROM Households"));
 			echo "Households served: " . $householdCnt;
 		?>
-
-	</body>
+</div>
+</body>
 </html>
