@@ -115,7 +115,7 @@ legend.scheduler-border {
     <br>
   </fieldset>
   <br>
-  <h3>Household member</h3>
+  <h3>Household members</h3>
   <br>
   <!--  			<div id="dynamicInput">-->
   <fieldset class="scheduler-border">
@@ -123,7 +123,7 @@ legend.scheduler-border {
     <br>
     <label>Name:</label>
     <input class="form-control" type="text" name="fname[]" placeholder="First name" required>
-    <input type="text" name="lname[]" placeholder="Last name" required>
+    <input class="form-control" type="text" name="lname[]" placeholder="Last name" required>
     <label>Date of Birth:</label>
     <input class="form-control" type="date" name = "DOB[]" required >
   </fieldset>
@@ -142,15 +142,14 @@ legend.scheduler-border {
 			function addInput(divName){
 
 				var newdiv = document.createElement('span');
-				newdiv.innerHTML = "<br><br>" + "Household member " +" <br><fieldset><legend><h4>Household member information:</h4></legend> <br>Name: <input type='text' name = 'fname[]' placeholder='Firstname' required> <input type='text' name='lname[]' placeholder='Last name' required> Date of Birth: <input type='date' name = 'DOB[]'></fieldset><br>" ;
+				newdiv.innerHTML = "<br>" +" <br><fieldset class='scheduler-border'><legend class='scheduler-border'>Household member information:</legend> <br><label>Name: <label><input class='form-control' type='text' name = 'fname[]' placeholder='Firstname' required> <input class='form-control' type='text' name='lname[]' placeholder='Last name' required><label> Date of Birth: <label><input class='form-control' type='date' name = 'DOB[]' required></fieldset>";
 				var g = document.createElement('button');
-				var newdiv = document.createElement('div');
 				var g = document.createElement('button');
-				newdiv.innerHTML = "<br>" + "Household member " +" <br><fieldset><legend><h4>Household member information:</h4></legend> <br>Name: <input type='text' name = 'fname[]' placeholder='Firstname' required> <input type='text' name='lname[]' placeholder='Last name' required> Date of Birth: <input type='date' name = 'DOB[]'></fieldset>";
 				counter++;
 				newdiv.setAttribute("id", "id_" + counter);
-				g.innerHTML= 'Remove Household Member';
+				g.innerHTML= 'Remove household member';
 				g.setAttribute("onclick", "removeElement('myForm','id_" + counter + "')");
+				g.className="btn btn-primary";
 				newdiv.appendChild(g);
 				document.getElementById(divName).appendChild(newdiv);
 	          	//var g = document.createElement('button');
