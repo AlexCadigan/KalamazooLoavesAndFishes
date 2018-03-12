@@ -65,8 +65,15 @@ for ($index = 0; $index < $householdSize; $index ++) {
 <script>
 	window.onload = returnHome();
 	function returnHome() {
-		window.location.href = "../HomePage.php";
+		setTimeout(function () {
+       window.location.href = "../HomePage.php";
+    }, 3000);
+
 	}
 </script>
+
+<body>
+	Your household has been checked in. Redirecting to home page.
+</body>
 
 </html>

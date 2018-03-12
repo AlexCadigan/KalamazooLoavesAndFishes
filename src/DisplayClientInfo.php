@@ -91,7 +91,7 @@ SOFTWARE.
     </ul>
   </div>
 </nav>
-<div class = "instructions"> Is the following information about yourself and your household correct? </div>
+
 <br>
 <?php
 require "lib/config.php";
@@ -99,6 +99,8 @@ $sql_checkin = "SELECT * FROM People WHERE (FirstName='" . $_POST['fname'] . "')
 $result_checkin = mysqli_query($connection, $sql_checkin);
 // if the results are non empty
 if ($result_checkin->num_rows > 0) {
+		echo "<div class = 'instructions'> Is the following information about yourself and your household correct? </div>";
+
     // fetch householdID
     $result = $result_checkin -> fetch_assoc();
     $householdID = $result['HouseholdID'];
@@ -119,7 +121,7 @@ if ($result_checkin->num_rows > 0) {
         <legend> Household Members: </legend>
         <input type = 'text' value = 'First Name' readonly>
         <input type = 'text' value = 'Last Name' readonly>
-        <input type = 'text' value = 'Data of Birth' readonly>
+        <input type = 'text' value = 'Date of Birth' readonly>
     </fieldset>";
     while($row = $members_query->fetch_assoc()) {
         echo "<fieldset>
@@ -136,7 +138,8 @@ if ($result_checkin->num_rows > 0) {
 }
 else {
     echo "<div class = 'page'>
-        No records matching your query were found <br> <br>
+        No records matching your exact query were found. <br> <br>
+				<button onclick = 'displayCheckInPage()'> Try Again </button> <br>
         <button onclick = 'displayRegisterPage()'> Register Your Information </button>
     </div>";
 }
@@ -144,9 +147,12 @@ else {
 mysqli_close($connection); ?>
 <html>
 <script>
-            function displayRegisterPage() {
-                window.location.href = 'RegisterPage.php';
-            }
-        </script>
+	function displayRegisterPage() {
+	    window.location.href = 'RegisterPage.php';
+	}
+	function displayCheckInPage() {
+	    window.location.href = 'CheckInPage.php';
+	}
+</script>
 </body>
 </html>
