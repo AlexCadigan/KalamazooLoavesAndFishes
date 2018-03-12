@@ -96,7 +96,7 @@ legend.scheduler-border {
     <div class="navbar-header"> <a class="navbar-brand" href="#">KLF Mobile Food Initiative</a> </div>
     <ul class="nav navbar-nav">
       <li><a href="HomePage.php">Home</a></li>
-      <li><a href="CheckInPage.php">Check-In</a></li>
+      <li><a href="CheckInPage.php">Check In</a></li>
       <li class="active"><a href="RegisterPage.php">Register</a></li>
       <li><a href="index.php">Change Location</a></li>
       <li><a href="#about">About</a></li>
@@ -128,7 +128,7 @@ legend.scheduler-border {
     <input class="form-control" type="date" name = "DOB[]" required >
   </fieldset>
   <br>
-  <!--			</div>--> 
+  <!--			</div>-->
   </span> <br>
   <input class="btn btn-primary" type="button" value="Add household member" onClick="addInput('myForm');">
   <br>

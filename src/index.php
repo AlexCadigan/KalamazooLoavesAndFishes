@@ -85,7 +85,7 @@ SOFTWARE.
     <div class="navbar-header"> <a class="navbar-brand" href="#">KLF Mobile Food Initiative</a> </div>
     <ul class="nav navbar-nav">
       <li><a href="HomePage.php">Home</a></li>
-      <li><a href="CheckInPage.php">Check-In</a></li>
+      <li><a href="CheckInPage.php">Check In</a></li>
       <li><a href="RegisterPage.php">Register</a></li>
       <li class="active"><a href="index.php">Change Location</a></li>
       <li><a href="#about">About</a></li>
@@ -98,7 +98,7 @@ SOFTWARE.
   <div class="form-group">
   <label for="sel1">Locations (select one):</label>
   <select class="form-control" id = 'locations' name = 'Locations'>
-    
+
     <!-- Quierries the database for the locations -->
     <?php
 require "lib/config.php";

@@ -98,7 +98,7 @@ SOFTWARE.
     <div class="navbar-header"> <a class="navbar-brand" href="#">KLF Mobile Food Initiative</a> </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="HomePage.php">Home</a></li>
-      <li><a href="CheckInPage.php">Check-In</a></li>
+      <li><a href="CheckInPage.php">Check In</a></li>
       <li><a href="RegisterPage.php">Register</a></li>
       <li><a href="index.php">Change Location</a></li>
       <li><a href="#about">About</a></li>
