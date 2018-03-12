@@ -99,7 +99,7 @@ $sql_checkin = "SELECT * FROM People WHERE (FirstName='" . $_POST['fname'] . "')
 $result_checkin = mysqli_query($connection, $sql_checkin);
 // if the results are non empty
 if ($result_checkin->num_rows > 0) {
-		echo "<div class = 'instructions'> Is the following information about yourself and your household correct? </div>";
+		//echo "<div class = 'instructions'> Is the following information about yourself and your household correct? </div>";
 
     // fetch householdID
     $result = $result_checkin -> fetch_assoc();
@@ -107,33 +107,43 @@ if ($result_checkin->num_rows > 0) {
     // display household information
     $household_query = mysqli_query($connection, "SELECT Street, City, ZIP, Size FROM Households WHERE ID='" . $householdID . "' LIMIT 1");
     while ($hh = $household_query->fetch_assoc()) {
-        echo "<form class = 'page' method = 'POST' action = 'lib/InsertCheckIn.php'>
-            <fieldset>
-                <legend> Household Address: </legend>
-                <input type = 'text' name = 'street' value = '" . $hh['Street'] . "' readonly>
-                <input type = 'text' name = 'city' value = '" . $hh['City'] . "' readonly>
-                <input type = 'text' name = 'ZIP' value = '" . $hh['ZIP'] . "' readonly>
+        echo "<form class = 'form-inline' method = 'POST' action = 'lib/InsertCheckIn.php'>
+            <fieldset class='scheduler-border'>
+                <legend class='scheduler-border' align='center'> Household Address: </legend>
+                <div align='center'>
+                <input class='form-control' type = 'text' name = 'street' value = '" . $hh['Street'] . "' readonly>
+                <input class='form-control' type = 'text' name = 'city' value = '" . $hh['City'] . "' readonly>
+                <input class='form-control' type = 'text' name = 'ZIP' value = '" . $hh['ZIP'] . "' readonly>
+                <div>
             </fieldset> <br>";
     }
     $members_query = mysqli_query($connection, "SELECT FirstName, LastName, DateOfBirth FROM People WHERE HouseholdID='" . $householdID . "'");
     // display table of household members
-    echo "<fieldset>
-        <legend> Household Members: </legend>
-        <input type = 'text' value = 'First Name' readonly>
-        <input type = 'text' value = 'Last Name' readonly>
-        <input type = 'text' value = 'Date of Birth' readonly>
+    echo "<fieldset class='scheduler-border'>
+        <legend class='scheduler-border' align='center'> Household Members: </legend>
+        <div align='center'>
+        <input class='form-control' type = 'text' value = 'First Name' readonly>
+        <input class='form-control' type = 'text' value = 'Last Name' readonly>
+        <input class='form-control' type = 'text' value = 'Date of Birth' readonly>
+        </div>
     </fieldset>";
     while($row = $members_query->fetch_assoc()) {
-        echo "<fieldset>
-            <input type = 'text' name='fname[]' value = '" . $row['FirstName'] . "' readonly>
-            <input type = 'text' name='lname[]' value = '" . $row['LastName'] . "' readonly>
-            <input type = 'text' name='dob[]' value = '" . $row['DateOfBirth'] . "' readonly>
+        echo "<fieldset class= 'scheduler-border'>
+            <div align='center'>
+            <input class='form-control' type = 'text' name='fname[]' value = '" . $row['FirstName'] . "' readonly>
+            <input class='form-control' type = 'text' name='lname[]' value = '" . $row['LastName'] . "' readonly>
+            <input class='form-control' type = 'text' name='dob[]' value = '" . $row['DateOfBirth'] . "' readonly>
+            <div>
         </fieldset>";
     }
-    echo "<br> <br> <input type = 'submit' value = 'Information Correct'>
+    echo "<br> <br> 
+    <div align='center'>
+    <input class='btn btn-primary' type = 'submit' value = 'Information Correct'>
     </form>
-    <div class = 'page'>
-        <button onclick = 'displayRegisterPage()'> Information Not Correct </button>
+    <br>
+    <br>
+    <div align='center'>
+        <button class='btn btn-primary' onclick = 'displayRegisterPage()'> Information Not Correct </button>
     </div>";
 }
 else {
