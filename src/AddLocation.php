@@ -26,63 +26,57 @@ SOFTWARE.
 	<head>
 		<title> KLF - MFI </title>
 		<link rel = "icon" href = "img/KLFLogo.jpg">
-		<style>
-			.page {
-				text-align: center;
-			}
-			#instructions {
-				font-size: 30px;
-			}
-			.button {
-				font-size: 20px;
-			}
-
-			ul {
-    			list-style-type: none;
-	    		margin: 0;
-	    		padding: 0;
-	    		overflow: hidden;
-	    		background-color: #333;
-			}
-
-			li {
-    			float: left;
-			}
-
-			li a {
-		    	display: block;
-		    	color: white;
-		    	text-align: center;
-		    	padding: 14px 16px;
-		    	text-decoration: none;
-			}
+        
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        
 		
-			li a:hover {
-		    	background-color: #111;
-			}
-		</style>
 	</head>
 	<body>
-		<ul>
-		  <li><a href="CheckInPage.php">Check-In</a></li>
+		<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">KLF Mobile Food Initiative</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#">Home</a></li>
+       <li><a href="CheckInPage.php">Check-In</a></li>
 		  <li><a href="RegisterPage.php">Register</a></li>
-		  <li><a href="AddLocation.php">Change Location</a></li>
+		  <li><a href="index.php">Change Location</a></li>
 		  <li><a href="#about">About</a></li>
-		</ul>
-		<div id = 'instructions' class = 'page'>
-			Please enter the new location:
-		</div> <br> <br>
-		<form class = 'page' method = 'POST' action = 'lib/InsertLocation.php'>
-			<fieldset>
-				<input type = 'text' name = 'name' placeholder = 'Location Name' required>
-				<input type = 'text' name = 'street' placeholder = 'Location Street' required>
-				<input type = 'text' name = 'city' placeholder = 'Location City' required>
-				<input type = "text" name = "ZIP" placeholder = "Location Zip" pattern="[0-9]{5}" maxlength="5" required>
-			</fieldset> <br> <br>
-			<input class = 'button' type = 'submit' value = 'Add Location'> <br> <br>
+    </ul>
+  </div>
+</nav>
+		<div align="center" class="container">
+        <form class="form-horizontal" method="POST" action = 'lib/InsertLocation.php'>
+			<h2>Please enter the new location: </h2>
+		<div class="form-group">
+		
+			
+				<input class="form-control" type = 'text' name = 'name' placeholder = 'Location Name' required>
+				<input class="form-control" type = 'text' name = 'street' placeholder = 'Location Street' required>
+				<input class="form-control" type = 'text' name = 'city' placeholder = 'Location City' required>
+				<input class="form-control" type = "text" name = "ZIP" placeholder = "Location Zip" pattern="[0-9]{5}" maxlength="5" required>
+			
+            </div>
+			<div class="form-group">        
+    
+        <button type="submit" class="btn btn-default">Enter</button>
+      
+    </div>
+   
+    
 		</form>
+         
 		<form class = 'page' action = 'index.php'>
-			<input class = 'button' type = 'submit' value = 'Back'>
+			
+            <button type="submit" class="btn btn-default" value ='Back'>Back</button>
 		</form>
+        
+   
 	</body>
 </html>

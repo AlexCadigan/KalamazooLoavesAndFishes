@@ -55,10 +55,10 @@ SOFTWARE.
 				<a class="navbar-brand" href="#">KLF Mobile Food Initiative</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#">Home</a></li>
 				<li><a href="CheckInPage.php">Check-In</a></li>
-				<li><a href="RegisterPage.html">Register</a></li>
-				<li><a href="AddLocation.php">Change Location</a></li>
+				<li class="active"><a href="RegisterPage.php">Register</a></li>
+				<li><a href="index.php">Change Location</a></li>
 				<li><a href="#about">About</a></li>
 			</ul>
 		</div>

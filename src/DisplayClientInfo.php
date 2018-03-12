@@ -24,52 +24,30 @@ SOFTWARE.
 <html>
     <head>
         <title> KLF - MFI </title>
-        <link rel = "icon" href = "img/KLFLogo.jpg">
-        <style>
-            .page {
-                text-align: center;
-            }
-            .instructions {
-                text-align: center;
-                font-size: 30px;
-            }
-            #table {
-                margin-left: auto;
-                margin-right: auto;
-            }
+       <link rel = "icon" href = "img/KLFLogo.jpg">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-            ul {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-                background-color: #333;
-            }
-
-            li {
-                float: left;
-            }
-
-            li a {
-                display: block;
-                color: white;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-            }
-
-            li a:hover {
-                background-color: #111;
-            }
-        </style>
-    </head>
-    <body>
-        <ul>
-          <li><a href="CheckInPage.php">Check-In</a></li>
-          <li><a href="RegisterPage.php">Register</a></li>
-          <li><a href="AddLocation.php">Change Location</a></li>
-          <li><a href="#about">About</a></li>
-        </ul>
+	</head>
+	<body>
+	
+	<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">KLF Mobile Food Initiative</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#">Home</a></li>
+       <li><a href="CheckInPage.php">Check-In</a></li>
+		  <li><a href="RegisterPage.php">Register</a></li>
+		  <li><a href="index.php">Change Location</a></li>
+		  <li><a href="#about">About</a></li>
+    </ul>
+  </div>
+</nav>
         <div class = "instructions">
             Is the following information about yourself and your household correct?
         </div> <br>

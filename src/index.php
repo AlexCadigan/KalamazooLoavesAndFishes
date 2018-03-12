@@ -25,37 +25,30 @@ SOFTWARE.
 	<!-- Sets the browser tab attributes -->
 	<head>
 		<title> KLF - MFI </title>
-		<link rel = "icon" href = "img/KLFLogo.jpg">
-		<style>
-			.page {
-				text-align: center;
-			}
-			#title {
-				font-size: 40px;
-			}
-			#instructions {
-				font-size: 30px;
-			}
-			#locations {
-				font-size: 20px;
-			}
-			.button {
-			    border: 2px solid black;
-			    font-size: 20px;
-			    height: 50px;
-			    width: 250px;
-			}
-			.button:hover, .button:active {
-			    background-color: black;
-			    color: white;
-			}
-			.button:focus {
-			    outline: 0;
-			}
-		</style>
+	<link rel = "icon" href = "img/KLFLogo.jpg">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 	</head>
-	<!-- Drop down list of available locations -->
 	<body>
+	
+	<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">KLF Mobile Food Initiative</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#">Home</a></li>
+       <li><a href="CheckInPage.php">Check-In</a></li>
+		  <li><a href="RegisterPage.php">Register</a></li>
+		  <li class="active"><a href="index.php">Change Location</a></li>
+		  <li><a href="#about">About</a></li>
+    </ul>
+  </div>
+</nav>
 		<div id = 'title' class = 'page'>
 			Welcome, KLF Employee/Volunteer!
 		</div> <br>
