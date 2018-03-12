@@ -86,7 +86,7 @@ SOFTWARE.
 			function addInput(divName){
 
 				var newdiv = document.createElement('span');
-				newdiv.innerHTML = "<br>" +" <br><fieldset class='scheduler-border'><legend class='scheduler-border'>Household member information:</legend> <br><label>Name: <label><input class='form-control' type='text' name = 'fname[]' placeholder='Firstname' required> <input class='form-control' type='text' name='lname[]' placeholder='Last name' required><label> Date of Birth: <label><input class='form-control' type='date' name = 'DOB[]' required></fieldset>";
+				newdiv.innerHTML = "<br>" +" <br><fieldset class='scheduler-border'><legend class='scheduler-border'>Household member information:</legend> <br><label>Name: <label><input class='form-control' type='text' name = 'fname[]' placeholder='First name' required> <input class='form-control' type='text' name='lname[]' placeholder='Last name' required><label> Date of Birth: <label><input class='form-control' type='date' name = 'DOB[]' required></fieldset>";
 				var g = document.createElement('button');
 				var g = document.createElement('button');
 				counter++;
