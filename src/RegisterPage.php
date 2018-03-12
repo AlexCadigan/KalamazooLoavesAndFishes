@@ -22,74 +22,18 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 -->
 <html>
+
 <head>
 <title>New User</title>
 <link rel = "icon" href = "img/KLFLogo.jpg">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<style>
-fieldset.scheduler-border {
-	border: 1px groove #ddd !important;
-	padding: 0 1.4em 1.4em 1.4em !important;
-	margin: 0 0 1.5em 0 !important;
-	-webkit-box-shadow: 0px 0px 0px 0px #000;
-	box-shadow: 0px 0px 0px 0px #000;
-}
-legend.scheduler-border {
-	width: inherit; /* Or auto */
-	padding: 0 10px; /* To give a bit of padding on the left and right */
-	border-bottom: none;
-}
-.navbar-default {
-	background-color: #0a76ac;
-	border-color: #6b8adc;
-}
-.navbar-default .navbar-brand {
-	color: #ffffff;
-}
-.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-	color: #fcfcfc;
-}
-.navbar-default .navbar-text {
-	color: #ffffff;
-}
-.navbar-default .navbar-nav > li > a {
-	color: #ffffff;
-}
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-	color: #fcfcfc;
-}
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-	color: #fcfcfc;
-	background-color: #6b8adc;
-}
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-	color: #fcfcfc;
-	background-color: #6b8adc;
-}
-.navbar-default .navbar-toggle {
-	border-color: #6b8adc;
-}
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-	background-color: #6b8adc;
-}
-.navbar-default .navbar-toggle .icon-bar {
-	background-color: #ffffff;
-}
-.navbar-default .navbar-collapse, .navbar-default .navbar-form {
-	border-color: #ffffff;
-}
-.navbar-default .navbar-link {
-	color: #ffffff;
-}
-.navbar-default .navbar-link:hover {
-	color: #fcfcfc;
-}
-</style>
 </head>
+
 <body>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
